@@ -1,5 +1,5 @@
 // Wiki Hub: PC에서만 도는 Sagwan Engine 관리 프로그램.
-// 127.0.0.1 전용 서버 + Edge 앱 창. 외부로 나가는 것은 GitHub 릴리스 조회와 (다음 단계의) wrangler 배포 명령뿐이다.
+// 127.0.0.1 전용 서버 + 브라우저 앱 창(Chrome 우선, 없으면 Edge). 외부로 나가는 것은 GitHub 릴리스 조회와 (다음 단계의) wrangler 배포 명령뿐이다.
 package main
 
 import (

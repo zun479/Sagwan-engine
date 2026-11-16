@@ -7,7 +7,7 @@
 > 아직 코드 서명이 없어 처음 실행할 때 Windows가 "PC 보호" 창을 띄울 수 있습니다. [추가 정보] → [실행]을 누르세요.
 > 받은 파일이 맞는지는 `SHA256SUMS.txt`의 값과 비교해 확인할 수 있습니다 (PowerShell: `Get-FileHash 파일이름`).
 
-Windows 10/11, Microsoft Edge(기본 설치됨)가 필요합니다.
+Windows 10/11이 필요합니다. 창은 Chrome으로 열리고, Chrome이 없으면 Windows 기본 Edge로 열립니다.
 
 ## 파일
 

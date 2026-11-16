@@ -21,7 +21,7 @@ apps/hub        Wiki Hub (Windows PC 프로그램, Go). 인프라 블록·엔진
 ## Wiki Hub 설치 (사용자)
 
 [Releases](https://github.com/zun479/Sagwan-engine/releases)에서 `WikiHub-Setup-버전.exe`를 받아 실행 → 설치 폴더 선택 → 설치. 관리자 권한은 필요 없습니다.
-Wiki Hub는 이 PC 안에서만 동작하며 계정이 없습니다. 창은 Windows에 기본으로 있는 Microsoft Edge의 앱 모드로 열립니다.
+Wiki Hub는 이 PC 안에서만 동작하며 계정이 없습니다. 창은 주소창 없는 앱 창으로 열립니다. Chrome이 있으면 Chrome을, 없으면 Windows에 기본으로 있는 Edge를 씁니다.
 
 ## 릴리스 만들기 (관리자)
 
