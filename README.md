@@ -25,6 +25,8 @@ Wiki Hub는 이 PC 안에서만 동작하며 계정이 없습니다. 창은 Wind
 
 ## 릴리스 만들기 (관리자)
 
+GitHub 웹에서 **Actions → release → [Run workflow]**를 누르고 버전(예: `0.1.0`)을 입력합니다. 또는 명령줄에서:
+
 ```bash
 git tag v0.1.0
 git push origin v0.1.0
