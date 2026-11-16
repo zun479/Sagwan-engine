@@ -25,4 +25,4 @@ Sagwan Engine의 **소스 코드**는 [GNU AGPL-3.0](LICENSE)으로 공개됩니
 
 이 상표 정책은 개별 위키의 운영·콘텐츠·수익에 관여하기 위한 것이 아닙니다. 운영 불간섭 원칙은 [README](README.md#라이선스와-운영-불간섭)를 보세요.
 
-문의: [YOUR CONTACT]
+문의: zoriusworks@gmail.com
