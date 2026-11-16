@@ -21,16 +21,20 @@ jobs:
   windows:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-go@v5
+      - uses: actions/setup-go@v6
         with:
           go-version: '1.24'
           cache-dependency-path: apps/hub/go.mod
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: '22'
+
+      - name: 패키지 설치 (워크스페이스 연결 포함)
+        shell: bash
+        run: npm install --no-audit --no-fund --ignore-scripts
 
       - name: 엔진 테스트
         shell: bash
