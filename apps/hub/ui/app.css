@@ -1,0 +1,49 @@
+/* Unity Hub 풍 다크. 각진 모서리, 단색 블록, 그라데이션 없음 */
+:root { --bg:#191919; --panel:#212121; --line:#303030; --text:#E4E4E4; --muted:#A6A6A6; --accent:#2196F3; --red:#E5534B; }
+* { box-sizing:border-box; }
+html,body { margin:0; height:100%; background:var(--bg); color:var(--text); font:14px/1.5 "Segoe UI","Malgun Gothic",sans-serif; user-select:none; }
+button { font:inherit; color:var(--text); background:#3A3A3A; border:1px solid #474747; padding:6px 14px; cursor:pointer; border-radius:3px; }
+button:hover { background:#454545; }
+button.primary { background:var(--accent); border-color:var(--accent); color:#fff; }
+button.primary:hover { background:#1E88E5; }
+button.danger { background:transparent; border-color:#5a2a28; color:var(--red); }
+button:disabled { opacity:.45; cursor:default; }
+.app { display:flex; height:100%; }
+.side { width:210px; background:var(--panel); border-right:1px solid var(--line); display:flex; flex-direction:column; }
+.logo { display:flex; align-items:center; gap:10px; padding:16px; font-weight:600; font-size:15px; }
+.side nav { display:flex; flex-direction:column; padding:4px 8px; gap:2px; }
+.side nav button { text-align:left; background:none; border:0; padding:9px 12px; color:var(--muted); }
+.side nav button.active { background:#2C2C2C; color:var(--text); box-shadow:inset 3px 0 0 var(--accent); }
+.side-foot { margin-top:auto; padding:12px 16px; color:#777; font-size:12px; }
+main { flex:1; overflow:auto; }
+.bar { display:flex; align-items:center; gap:14px; padding:18px 24px; border-bottom:1px solid var(--line); position:sticky; top:0; background:var(--bg); }
+.bar h1 { margin:0; font-size:20px; font-weight:600; }
+.bar .hint { color:#777; font-size:12px; margin-right:auto; }
+.bar button:last-child { margin-left:auto; }
+.blocks { display:grid; grid-template-columns:repeat(auto-fill, 220px); gap:12px; padding:24px; }
+.block { height:132px; padding:14px; display:flex; flex-direction:column; cursor:pointer; color:#fff; border:0; text-align:left; border-radius:0; }
+.block:hover { filter:brightness(1.1); }
+.block .kind { font-size:11px; letter-spacing:.06em; opacity:.85; text-transform:uppercase; }
+.block .name { font-size:17px; font-weight:600; margin-top:2px; word-break:keep-all; }
+.block .due { margin-top:auto; font-size:13px; font-weight:600; }
+.block .due.none { background:#fff; color:var(--red); align-self:flex-start; padding:1px 6px; }
+.block .due.soon { background:#000; color:#FFD54A; align-self:flex-start; padding:1px 6px; }
+.k-cloudflare { background:#C8611B; } .k-ncp { background:#0F8A44; } .k-oracle { background:#9E2B25; }
+.k-supabase { background:#2F7D5B; } .k-domain { background:#3D5A80; } .k-other { background:#4A4A4A; }
+.empty { color:var(--muted); padding:24px; }
+.list { padding:16px 24px; }
+.item { background:var(--panel); border:1px solid var(--line); padding:14px 16px; margin-bottom:8px; display:flex; gap:16px; align-items:center; }
+.item .meta { color:var(--muted); font-size:12px; }
+.item .grow, .grow { flex:1; }
+.tag { font-size:11px; padding:1px 6px; border:1px solid #555; color:var(--muted); margin-left:6px; }
+.notes { white-space:pre-wrap; color:var(--muted); font-size:12px; margin-top:6px; user-select:text; }
+dialog { background:var(--panel); color:var(--text); border:1px solid #444; padding:0; width:420px; border-radius:4px; }
+dialog::backdrop { background:rgba(0,0,0,.55); }
+dialog form { padding:20px 22px; }
+dialog h2 { margin:0 0 14px; font-size:16px; }
+label { display:block; color:var(--muted); font-size:12px; margin-bottom:12px; }
+input, select { display:block; width:100%; margin-top:4px; background:#2A2A2A; color:var(--text); border:1px solid #444; padding:7px 9px; font:inherit; border-radius:2px; color-scheme:dark; user-select:text; }
+label.check { display:flex; gap:8px; align-items:center; color:var(--text); font-size:14px; }
+label.check input { width:auto; margin:0; }
+.row { display:flex; gap:8px; align-items:center; }
+.err { color:var(--red); min-height:1em; margin:0 0 8px; }

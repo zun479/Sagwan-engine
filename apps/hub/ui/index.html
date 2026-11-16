@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Wiki Hub</title>
+<link rel="icon" href="icon.svg">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <div class="logo"><img src="icon.svg" alt="" width="28" height="28"><span>Wiki Hub</span></div>
+    <nav>
+      <button data-tab="infra" class="active">인프라</button>
+      <button data-tab="wikis">내 위키</button>
+      <button data-tab="engines">엔진 버전</button>
+    </nav>
+    <div class="side-foot" id="ver"></div>
+  </aside>
+  <main>
+    <section id="tab-infra" class="tab">
+      <header class="bar"><h1>인프라</h1><span class="hint">좌클릭: 서비스 사이트 열기 · 우클릭: 편집</span><button class="primary" id="add-block">블록 추가</button></header>
+      <div class="blocks" id="blocks"></div>
+    </section>
+    <section id="tab-wikis" class="tab" hidden>
+      <header class="bar"><h1>내 위키</h1><button class="primary" id="new-wiki">새 위키 만들기</button></header>
+      <div id="wikis"></div>
+    </section>
+    <section id="tab-engines" class="tab" hidden>
+      <header class="bar"><h1>엔진 버전</h1><button id="reload-rel">새로고침</button></header>
+      <div id="releases"></div>
+    </section>
+  </main>
+</div>
+
+<dialog id="edit">
+  <form method="dialog" id="edit-form">
+    <h2 id="edit-title">블록 편집</h2>
+    <label>이름<input name="name" maxlength="40" required></label>
+    <label>종류
+      <select name="kind">
+        <option value="cloudflare">Cloudflare</option>
+        <option value="ncp">네이버 클라우드</option>
+        <option value="oracle">Oracle Cloud</option>
+        <option value="supabase">Supabase</option>
+        <option value="domain">도메인</option>
+        <option value="other">기타</option>
+      </select>
+    </label>
+    <label>서비스 주소 (좌클릭 시 열림)<input name="url" placeholder="https://dash.cloudflare.com/"></label>
+    <label>만료일<input name="expires" type="date"></label>
+    <label class="check"><input name="autoRenew" type="checkbox"> 자동 연장</label>
+    <p class="err" id="edit-err"></p>
+    <div class="row">
+      <button type="button" id="del" class="danger">삭제</button>
+      <span class="grow"></span>
+      <button type="button" id="cancel">취소</button>
+      <button class="primary" id="save">저장</button>
+    </div>
+  </form>
+</dialog>
+<script src="app.js"></script>
+</body>
+</html>

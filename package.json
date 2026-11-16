@@ -1,0 +1,25 @@
+{
+  "name": "sagwan",
+  "private": true,
+  "description": "Sagwan Engine — 스트리머 팬 위키 엔진 (설치 1회 = 위키 1개)",
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "test": "node --test \"packages/shared/test/*.test.ts\" \"apps/api/test/*.test.ts\"",
+    "test:schema": "node scripts/check-schema.mjs",
+    "typecheck": "tsc -p packages/shared && tsc -p apps/api && tsc -p apps/api/tsconfig.node.json && tsc -p apps/web",
+    "dev:api": "npm --workspace apps/api run dev",
+    "dev:web": "npm --workspace apps/web run dev",
+    "db:migrate:local": "npm --workspace apps/api run db:migrate:local"
+  },
+  "devDependencies": {
+    "typescript": "5.6.3"
+  }
+}

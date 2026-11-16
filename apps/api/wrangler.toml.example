@@ -1,0 +1,22 @@
+# Wiki Hub가 설치 때 이 파일을 복사해 wrangler.toml을 만든다. wrangler.toml은 커밋하지 않는다.
+name = "sagwan-wiki"
+main = "src/entries/cloudflare.ts"
+compatibility_date = "2026-11-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "sagwan-wiki"
+database_id = "<Hub가 채움>"
+migrations_dir = "../../migrations/sqlite"
+
+[[r2_buckets]]
+binding = "MEDIA"
+bucket_name = "sagwan-wiki-media"
+
+[triggers]
+crons = ["17 4 * * *"]   # 매일 13:17 KST: 감사 로그 공개 덤프
+
+# 비밀값은 여기에 쓰지 않는다. 아래 명령으로 Secret에만 넣는다.
+#   wrangler secret put AUTH_PEPPER
+#   wrangler secret put DATA_ENCRYPTION_KEY
+#   wrangler secret put TURNSTILE_SECRET   (선택)
