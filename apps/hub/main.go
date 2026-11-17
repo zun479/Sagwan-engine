@@ -84,7 +84,10 @@ func (s *server) guard(next http.Handler) http.Handler {
 	})
 }
 
-var dateRe = regexp.MustCompile(`^\d{4}-\d{2}-\d{2}$`)
+var (
+	dateRe = regexp.MustCompile(`^\d{4}-\d{2}-\d{2}$`)
+	kindRe = regexp.MustCompile(`^[a-z0-9-]{1,40}$`)
+)
 
 func validHTTPURL(raw string) bool {
 	u, err := url.Parse(raw)
@@ -113,6 +116,13 @@ func (s *server) routes() http.Handler {
 		b.Name = strings.TrimSpace(b.Name)
 		if b.Name == "" || len([]rune(b.Name)) > 40 {
 			fail(w, 400, "이름은 1~40자여야 합니다.")
+			return
+		}
+		if b.Kind == "" {
+			b.Kind = "other"
+		}
+		if !kindRe.MatchString(b.Kind) {
+			fail(w, 400, "서비스 종류가 잘못되었습니다.")
 			return
 		}
 		if b.URL != "" && !validHTTPURL(b.URL) {
